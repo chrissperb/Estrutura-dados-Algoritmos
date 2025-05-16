@@ -10,7 +10,6 @@ package Atividade01;
 
 import java.util.Scanner;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -18,7 +17,7 @@ import java.util.List;
 
 public class Ex03SistemaContagemClientes {
     
-    // Classe para armazenar os dados de entrada de um cliente
+    // Armazena os dados de entrada de um cliente
     private static class RegistroCliente {
         private int numero;
         private LocalDateTime horaEntrada;
@@ -43,13 +42,13 @@ public class Ex03SistemaContagemClientes {
     }
     
     public static void main(String[] args) {
-        // Configuração do scanner para entrada do usuário
+        // Configuração do scanner para entrada do usuário, como mostrado na aula
         Scanner scanner = new Scanner(System.in);
         
         // Declaração das variáveis
         String nomeLoja;
         int totalClientes = 0;
-        final int META_CLIENTES = 10;
+        final int META_CLIENTES = 10; // Sem camelcase para identificar constante que, contudo, pode ser alterada de acordo com a necessidade
         
         // Lista para armazenar os registros de entrada
         List<RegistroCliente> registros = new ArrayList<>();
@@ -63,7 +62,7 @@ public class Ex03SistemaContagemClientes {
         // Atribuição de valores
         nomeLoja = "SuperMart Departamentos";
         
-        // Exibição do cabeçalho inicial
+        // Cabeçalho inicial
         System.out.println("══════════════════════════════════════════════════");
         System.out.println("               " + nomeLoja);
         System.out.println("           SISTEMA DE CONTAGEM DE CLIENTES");
@@ -150,7 +149,7 @@ public class Ex03SistemaContagemClientes {
         System.out.print("\033[H\033[2J");
         System.out.flush();
         
-        // Exibe o relatório final
+        // Relatório final
         System.out.println("══════════════════════════════════════════════════");
         System.out.println("               " + nomeLoja);
         System.out.println("           SISTEMA DE CONTAGEM DE CLIENTES");
@@ -168,7 +167,7 @@ public class Ex03SistemaContagemClientes {
             
             // Adiciona uma mensagem especial para o 5º cliente
             if (registro.getNumero() == 5) {
-                System.out.println(" ** Cliente recebeu cupom promocional **");
+                System.out.println(" ** Cliente deve receber cupom promocional!! **");
             }
             
             // Adiciona uma mensagem especial para o 10º cliente
