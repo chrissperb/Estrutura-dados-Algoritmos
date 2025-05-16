@@ -25,14 +25,6 @@ public class Ex04SistemaListaEsperaRestaurante {
         }
         
         // Getters e Setters - Lombok seria uma boa opção para diminuir o código
-        public String getNomeRestaurante() {
-            return nomeRestaurante;
-        }
-        
-        public void setNomeRestaurante(String nomeRestaurante) {
-            this.nomeRestaurante = nomeRestaurante;
-        }
-        
         public List<Cliente> getClientes() {
             return clientes;
         }
@@ -126,35 +118,19 @@ public class Ex04SistemaListaEsperaRestaurante {
         public String getNome() {
             return nome;
         }
-        
-        public void setNome(String nome) {
-            this.nome = nome;
-        }
-        
+          
         public String getTelefone() {
             return telefone;
         }
-        
-        public void setTelefone(String telefone) {
-            this.telefone = telefone;
-        }
-        
+
         public int getQuantidadePessoas() {
             return quantidadePessoas;
         }
-        
-        public void setQuantidadePessoas(int quantidadePessoas) {
-            this.quantidadePessoas = quantidadePessoas;
-        }
-        
+
         public int getTempoEspera() {
             return tempoEspera;
         }
-        
-        public void setTempoEspera(int tempoEspera) {
-            this.tempoEspera = tempoEspera;
-        }
-        
+              
         public int getPosicao() {
             return posicao;
         }
@@ -212,7 +188,7 @@ public class Ex04SistemaListaEsperaRestaurante {
             int opcao = 0;
             try {
                 opcao = scanner.nextInt();
-                scanner.nextLine(); // Limpa o buffer do scanner
+                scanner.nextLine(); // Limpa o buffer do scanner, pois pode provocar erro na leitura do próximo inteiro
             } catch (Exception e) {
                 scanner.nextLine(); // Limpa o buffer do scanner em caso de erro
                 System.out.println(" Ops! Opção inválida! Digite um número de 1 a 4.");
@@ -242,23 +218,23 @@ public class Ex04SistemaListaEsperaRestaurante {
                                 System.out.println(" Ops! A quantidade deve ser maior que zero.");
                             }
                         } catch (Exception e) {
-                            scanner.nextLine(); // Limpa o buffer do scanner
+                            scanner.nextLine(); 
                             System.out.println(" Ops! Por favor, digite um número válido.");
                         }
                     }
                     
                     int tempoEspera = 0;
-                    scanner.nextLine(); // Limpa o buffer do scanner
+                    scanner.nextLine(); 
                     while (tempoEspera <= 0) {
                         try {
                             System.out.print(" Tempo estimado de espera (minutos): ");
                             tempoEspera = scanner.nextInt();
-                            scanner.nextLine(); // Limpa o buffer do scanner
+                            scanner.nextLine(); 
                             if (tempoEspera <= 0) {
                                 System.out.println(" Ops! O tempo deve ser maior que zero.");
                             }
                         } catch (Exception e) {
-                            scanner.nextLine(); // Limpa o buffer do scanner
+                            scanner.nextLine(); 
                             System.out.println(" Ops! Por favor, digite um número válido.");
                         }
                     }
@@ -270,7 +246,6 @@ public class Ex04SistemaListaEsperaRestaurante {
                     limparTela();
                     lista.adicionarCliente(novoCliente);
                     
-                    // Aguarda o usuário pressionar Enter para continuar
                     System.out.print("\n Pressione Enter para continuar...");
                     scanner.nextLine();
                     limparTela();
@@ -284,8 +259,7 @@ public class Ex04SistemaListaEsperaRestaurante {
                     System.out.println("\n—————————— REMOVER CLIENTE ——————————");
                     
                     if (lista.getClientes().isEmpty()) {
-                        System.out.println(" ℹ️ A lista de espera está vazia.");
-                        // Aguarda o usuário pressionar Enter para continuar
+                        System.out.println(" A lista de espera está vazia.");
                         System.out.print("\n Pressione Enter para continuar...");
                         scanner.nextLine();
                         limparTela();
