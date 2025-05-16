@@ -1,6 +1,14 @@
 package Atividade01;
 
-public class Ex03SistemaContagemClientes {
+/*
+ * Sistema de Reserva de Hotel
+ * Este programa simula um sistema de reserva de hotel, exibindo um comprovante de reserva com os dados do hóspede e informações da estadia.
+ * 
+ * Autor: Christian Sperb
+ * Data: 15/05/2025
+ */
+
+ public class Ex03SistemaContagemClientes {
     public static void main(String[] args) {
         // Declaração das variáveis
         String nomeLoja;

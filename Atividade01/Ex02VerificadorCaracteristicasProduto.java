@@ -1,5 +1,13 @@
 package Atividade01;
 
+/*
+ * Sistema de Verificação de Características de Produto
+ * Este programa simula um sistema de verificação de características de produtos, exibindo informações sobre o produto e sua classificação para inventário.
+ *  
+ * Autor: Christian Sperb
+ * Data: 15/05/2025
+ */
+
 public class Ex02VerificadorCaracteristicasProduto {
     public static void main(String[] args) {
         // Declaração das variáveis
