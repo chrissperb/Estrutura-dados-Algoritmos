@@ -6,7 +6,7 @@ package Atividade01;
  * Autor: Christian Sperb
  * Data: 15/05/2025
  */
-public class Ex1SistemaReservaHotel {
+public class Ex01SistemaReservaHotel {
     public static void main(String[] args) {
         // Declaração das variáveis
         int numeroQuarto;

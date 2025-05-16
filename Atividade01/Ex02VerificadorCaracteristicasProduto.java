@@ -1,6 +1,6 @@
 package Atividade01;
 
-public class Ex2VerificadorCaracteristicasProduto {
+public class Ex02VerificadorCaracteristicasProduto {
     public static void main(String[] args) {
         // Declaração das variáveis
         String nomeLoja;
