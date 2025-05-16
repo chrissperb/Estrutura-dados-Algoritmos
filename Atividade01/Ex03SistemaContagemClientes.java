@@ -31,10 +31,6 @@ public class Ex03SistemaContagemClientes {
             return numero;
         }
         
-        public LocalDateTime getHoraEntrada() {
-            return horaEntrada;
-        }
-        
         public String getHoraFormatada() {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
             return horaEntrada.format(formatter);
