@@ -1,53 +1,178 @@
 package Atividade01;
 
 /*
- * Sistema de Reserva de Hotel
- * Este programa simula um sistema de reserva de hotel, exibindo um comprovante de reserva com os dados do hóspede e informações da estadia.
+ * Sistema de Contagem de Clientes
+ * Este programa registra e conta clientes que entram na loja, usando a hora real do sistema.
  * 
  * Autor: Christian Sperb
  * Data: 15/05/2025
  */
 
- public class Ex03SistemaContagemClientes {
+import java.util.Scanner;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Ex03SistemaContagemClientes {
+    
+    // Classe para armazenar os dados de entrada de um cliente
+    private static class RegistroCliente {
+        private int numero;
+        private LocalDateTime horaEntrada;
+        
+        public RegistroCliente(int numero, LocalDateTime horaEntrada) {
+            this.numero = numero;
+            this.horaEntrada = horaEntrada;
+        }
+        
+        public int getNumero() {
+            return numero;
+        }
+        
+        public LocalDateTime getHoraEntrada() {
+            return horaEntrada;
+        }
+        
+        public String getHoraFormatada() {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+            return horaEntrada.format(formatter);
+        }
+    }
+    
     public static void main(String[] args) {
+        // Configuração do scanner para entrada do usuário
+        Scanner scanner = new Scanner(System.in);
+        
         // Declaração das variáveis
         String nomeLoja;
-        String data;
-        String horario;
-        int totalClientes;
+        int totalClientes = 0;
+        final int META_CLIENTES = 10;
         
-        // Atribuição de valores de exemplo
+        // Lista para armazenar os registros de entrada
+        List<RegistroCliente> registros = new ArrayList<>();
+        
+        // Obtém a data e hora atual do sistema
+        LocalDateTime dataHoraInicio = LocalDateTime.now();
+        DateTimeFormatter formatterData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter formatterHora = DateTimeFormatter.ofPattern("HH:mm:ss");
+        String dataAtual = dataHoraInicio.format(formatterData);
+        
+        // Atribuição de valores
         nomeLoja = "SuperMart Departamentos";
-        data = "15/05/2025";
-        horario = "14:00 - 15:00";
-        totalClientes = 10;
         
-        // Exibição do cabeçalho
+        // Exibição do cabeçalho inicial
         System.out.println("══════════════════════════════════════════════════");
         System.out.println("               " + nomeLoja);
         System.out.println("           SISTEMA DE CONTAGEM DE CLIENTES");
         System.out.println("══════════════════════════════════════════════════");
-        System.out.println(" DATA: " + data + "           HORÁRIO: " + horario);
+        System.out.println(" DATA: " + dataAtual + "     HORA INICIAL: " + dataHoraInicio.format(formatterHora));
+        System.out.println("══════════════════════════════════════════════════");
+        System.out.println(" BEM-VINDO AO SISTEMA DE CONTAGEM!");
+        System.out.println(" Este sistema irá registrar a entrada de clientes usando");
+        System.out.println(" a hora real do sistema para cada registro.");
+        System.out.println("");
+        System.out.println(" Pressione ENTER para iniciar o sistema de contagem...");
+        scanner.nextLine(); // Aguarda o usuário pressionar Enter para iniciar
+        
+        boolean continuar = true;
+        LocalDateTime horaFim = null;
+        
+        // Loop para registrar os clientes
+        while (continuar && totalClientes < META_CLIENTES) {
+            // Limpa o console (tentativa para sistemas compatíveis)
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+            
+            // Exibe o cabeçalho atual
+            System.out.println("══════════════════════════════════════════════════");
+            System.out.println("               " + nomeLoja);
+            System.out.println("           SISTEMA DE CONTAGEM DE CLIENTES");
+            System.out.println("══════════════════════════════════════════════════");
+            System.out.println(" DATA: " + dataAtual + "     HORA INICIAL: " + dataHoraInicio.format(formatterHora));
+            System.out.println("══════════════════════════════════════════════════");
+            System.out.println(" REGISTRO DE ENTRADA DE CLIENTES:");
+            System.out.println("");
+            
+            // Exibe todos os registros anteriores
+            for (RegistroCliente registro : registros) {
+                System.out.println(" Cliente #" + registro.getNumero() + 
+                                 " - Entrada registrada às " + registro.getHoraFormatada());
+                
+                // Adiciona uma mensagem especial para o 5º cliente
+                if (registro.getNumero() == 5) {
+                    System.out.println(" ** Cliente recebeu cupom promocional **");
+                }
+                
+                // Adiciona uma mensagem especial para o 10º cliente
+                if (registro.getNumero() == 10) {
+                    System.out.println(" ** Cliente nº 10! Meta da hora atingida! **");
+                }
+            }
+            
+            System.out.println("");
+            System.out.println(" Total atual: " + totalClientes + " / " + META_CLIENTES + " clientes");
+            System.out.println("");
+            System.out.println("--------------------------------------------------");
+            System.out.println(" Digite ENTER quando um cliente entrar na loja ou");
+            System.out.println(" digite 'fim' para encerrar a contagem: ");
+            String entrada = scanner.nextLine();
+            
+            if (entrada.equalsIgnoreCase("fim")) {
+                horaFim = LocalDateTime.now();
+                continuar = false;
+            } else {
+                // Incrementa o contador e registra a entrada com a hora atual
+                totalClientes++;
+                LocalDateTime horaEntrada = LocalDateTime.now();
+                RegistroCliente novoRegistro = new RegistroCliente(totalClientes, horaEntrada);
+                registros.add(novoRegistro);
+                
+                if (totalClientes == META_CLIENTES) {
+                    horaFim = horaEntrada;
+                }
+            }
+        }
+        
+        // Se não foi definido um horário de fim (saiu antes de atingir a meta)
+        if (horaFim == null) {
+            horaFim = LocalDateTime.now();
+        }
+        
+        // Calcula a diferença de tempo em minutos
+        long minutosTotais = ChronoUnit.MINUTES.between(dataHoraInicio, horaFim);
+        if (minutosTotais <= 0) minutosTotais = 1; // Para evitar divisão por zero
+        double mediaEntrada = (double) minutosTotais / totalClientes;
+        
+        // Limpa o console (tentativa para sistemas compatíveis)
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+        
+        // Exibe o relatório final
+        System.out.println("══════════════════════════════════════════════════");
+        System.out.println("               " + nomeLoja);
+        System.out.println("           SISTEMA DE CONTAGEM DE CLIENTES");
+        System.out.println("══════════════════════════════════════════════════");
+        System.out.println(" DATA: " + dataAtual);
+        System.out.println(" PERÍODO: " + dataHoraInicio.format(formatterHora) + " - " + horaFim.format(formatterHora));
         System.out.println("══════════════════════════════════════════════════");
         System.out.println(" REGISTRO DE ENTRADA DE CLIENTES:");
         System.out.println("");
         
-        // Loop para simular a contagem de clientes (1 a 10)
-        for (int i = 1; i <= totalClientes; i++) {
-            // Calcula um horário fictício para cada cliente
-            int minutos = (int)(58.0 / totalClientes * i);
-            String horaEntrada = String.format("14:%02d", minutos);
-            
-            // Exibe informação do cliente
-            System.out.println(" Cliente #" + i + " - Entrada registrada às " + horaEntrada);
+        // Exibe todos os registros
+        for (RegistroCliente registro : registros) {
+            System.out.println(" Cliente #" + registro.getNumero() + 
+                             " - Entrada registrada às " + registro.getHoraFormatada());
             
             // Adiciona uma mensagem especial para o 5º cliente
-            if (i == 5) {
+            if (registro.getNumero() == 5) {
                 System.out.println(" ** Cliente recebeu cupom promocional **");
             }
             
             // Adiciona uma mensagem especial para o 10º cliente
-            if (i == 10) {
+            if (registro.getNumero() == 10) {
                 System.out.println(" ** Cliente nº 10! Meta da hora atingida! **");
             }
         }
@@ -55,11 +180,23 @@ package Atividade01;
         System.out.println("");
         System.out.println("══════════════════════════════════════════════════");
         System.out.println(" RESUMO DO PERÍODO:");
-        System.out.println(" Total de clientes na hora: " + totalClientes);
-        System.out.println(" Média de entrada: 1 cliente a cada " + (60 / totalClientes) + " minutos");
+        System.out.println(" Total de clientes registrados: " + totalClientes);
+        System.out.println(" Duração total da contagem: " + minutosTotais + " minutos");
+        System.out.println(String.format(" Média de entrada: 1 cliente a cada %.1f minutos", mediaEntrada));
+        
+        // Adiciona uma mensagem sobre o status da meta
+        if (totalClientes >= META_CLIENTES) {
+            System.out.println(" ✓ META ATINGIDA!");
+        } else {
+            System.out.println(" ⚠ Meta não alcançada: " + totalClientes + "/" + META_CLIENTES + " clientes");
+        }
+        
         System.out.println("══════════════════════════════════════════════════");
         System.out.println(" Relatório gerado automaticamente");
         System.out.println(" Sistema de Contagem v1.0");
         System.out.println("══════════════════════════════════════════════════");
+        
+        // Fecha o scanner
+        scanner.close();
     }
 }
