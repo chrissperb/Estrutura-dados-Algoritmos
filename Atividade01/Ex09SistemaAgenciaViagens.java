@@ -238,6 +238,7 @@ public class Ex09SistemaAgenciaViagens {
         System.out.println(" Pressione ENTER para voltar ao menu principal...");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
+        scanner.close();
     }
     
     // Método para buscar cliente por nome
@@ -355,6 +356,7 @@ public class Ex09SistemaAgenciaViagens {
         System.out.println(" Pressione ENTER para voltar ao menu principal...");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
+        scanner.close();
     }
     
     // Método para exibir o cabeçalho padrão
