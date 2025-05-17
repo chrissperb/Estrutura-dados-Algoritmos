@@ -11,7 +11,7 @@ import java.util.Date;
  * Este programa analisa uma lista de pedidos de um cliente e identifica
  * qual item é mais frequentemente solicitado.
  *  
- * Autor: [Seu Nome]
+ * Autor: Christian Sperb
  * Data: 16/05/2025
  */
 
