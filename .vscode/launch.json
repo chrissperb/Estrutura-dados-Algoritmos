@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ex04VerificadorExpressoes",
+            "request": "launch",
+            "mainClass": "Atividade02.Ex04VerificadorExpressoes",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
             "name": "Ex03MescladorListasConvidados",
             "request": "launch",
             "mainClass": "Atividade02.Ex03MescladorListasConvidados",
