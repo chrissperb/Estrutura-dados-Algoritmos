@@ -1,3 +1,11 @@
+/*
+ * Gerenciador de Contatos 
+ * Este programa simula um gerenciador de contatos, onde o usuário pode adicionar contatos, remover duplicados e listar os contatos.
+ *  
+ * Autor: Christian Sperb
+ * Data: 21/05/2025
+ */
+
 package Atividade02;
 
 import java.util.ArrayList;

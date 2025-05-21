@@ -1,3 +1,12 @@
+/*
+ * Mesclador de Listas de Convidados 
+ * Este programa permite adicionar convidados a duas listas separadas (Lista A e Lista B),
+ * mesclar as listas intercalando os convidados e exibir as listas resultantes.
+ *  
+ * Autor: Christian Sperb
+ * Data: 21/05/2025
+ */
+
 package Atividade02;
 
 import java.util.ArrayList;

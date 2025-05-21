@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ex05InversorListaProdutos",
+            "request": "launch",
+            "mainClass": "Atividade02.Ex05InversorListaProdutos",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
             "name": "Ex04VerificadorExpressoes",
             "request": "launch",
             "mainClass": "Atividade02.Ex04VerificadorExpressoes",

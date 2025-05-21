@@ -1,3 +1,12 @@
+/*
+ * Inversor de Lista de Tarefas 
+ * Este programa simula um gerenciador de tarefas, onde o usuário pode adicionar tarefas e exibi-las em ordem normal ou inversa.
+ *  
+ * Autor: Christian Sperb
+ * Data: 21/05/2025
+ */
+
+
 package Atividade02;
 
 import java.util.ArrayList;

@@ -1,3 +1,12 @@
+/*
+ * Verificador de Expressões Matemáticas 
+ * Este programa verifica o balanceamento de delimitadores em expressões matemáticas,
+ * como parênteses, colchetes e chaves. Ele utiliza uma pilha para armazenar os delimitadores.
+ *  
+ * Autor: Christian Sperb
+ * Data: 21/05/2025
+ */
+
 package Atividade02;
 
 import java.util.Scanner;
