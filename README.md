@@ -17,7 +17,16 @@ Atividade01/
     Ex09SistemaNotasAlunos.java
     Ex10GerenciadorTarefas.java
 Atividade02/
-   Arquivos ainda por serem produzidos.
+    Ex01InversorListaTarefas.java
+    Ex02GerenciadorContatos.java
+    Ex03MescladorListasConvidados.java
+    Ex04VerificadorExpressoes.java
+    Ex05.java
+    Ex06.java
+    Ex07.java
+    Ex08.java
+    Ex09.java
+    Ex10.java
 Atividade03/
    Arquivos ainda por serem produzidos.
 AtividadeFinal/
