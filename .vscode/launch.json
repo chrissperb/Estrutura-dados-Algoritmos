@@ -1,0 +1,98 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Ex01SistemaReservaHotel",
+            "request": "launch",
+            "mainClass": "Atividade01.Ex01SistemaReservaHotel",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
+            "name": "Ex02VerificadorCaracteristicasProduto",
+            "request": "launch",
+            "mainClass": "Atividade01.Ex02VerificadorCaracteristicasProduto",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
+            "name": "Ex03SistemaContagemClientes",
+            "request": "launch",
+            "mainClass": "Atividade01.Ex03SistemaContagemClientes",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
+            "name": "Ex04SistemaListaEsperaRestaurante",
+            "request": "launch",
+            "mainClass": "Atividade01.Ex04SistemaListaEsperaRestaurante",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
+            "name": "Ex05CalculadorDesempenhoAlunos",
+            "request": "launch",
+            "mainClass": "Atividade01.Ex05CalculadorDesempenhoAlunos",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
+            "name": "Ex06IdentificadorNumerosPrimos",
+            "request": "launch",
+            "mainClass": "Atividade01.Ex06IdentificadorNumerosPrimos",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
+            "name": "Ex07JogoDaVelha",
+            "request": "launch",
+            "mainClass": "Atividade01.Ex07JogoDaVelha",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
+            "name": "Ex08AnalisadorPedidos",
+            "request": "launch",
+            "mainClass": "Atividade01.Ex08AnalisadorPedidos",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
+            "name": "Ex09SistemaAgenciaViagens",
+            "request": "launch",
+            "mainClass": "Atividade01.Ex09SistemaAgenciaViagens",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
+            "name": "Ex10SistemaGerenciamentoEstoque",
+            "request": "launch",
+            "mainClass": "Atividade01.Ex10SistemaGerenciamentoEstoque",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
+            "name": "Ex01InversorListaTarefas",
+            "request": "launch",
+            "mainClass": "Atividade02.Ex01InversorListaTarefas",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
+            "name": "Ex02GerenciadorContatos",
+            "request": "launch",
+            "mainClass": "Atividade02.Ex02GerenciadorContatos",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        }
+    ]
+}
