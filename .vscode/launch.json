@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ex10ClassificadorProdutos",
+            "request": "launch",
+            "mainClass": "Atividade02.Ex10ClassificadorProdutos",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
+            "name": "Ex09MescladorInventario",
+            "request": "launch",
+            "mainClass": "Atividade02.Ex09MescladorInventario",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
+            "name": "Ex08ContadorPalavras",
+            "request": "launch",
+            "mainClass": "Atividade02.Ex08ContadorPalavras",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
             "name": "Ex07GerenciadorFilaAtendimento",
             "request": "launch",
             "mainClass": "Atividade02.Ex07GerenciadorFilaAtendimento",
