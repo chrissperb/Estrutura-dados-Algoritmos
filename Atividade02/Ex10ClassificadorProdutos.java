@@ -352,8 +352,6 @@ public class Ex10ClassificadorProdutos {
         System.out.printf("%-15s | %-15s | %-15s%n", "Algoritmo", "Tempo (ms)", "Complexidade");
         System.out.println("-".repeat(50));
         
-        // Testar cada algoritmo
-        String[] algoritmos = {"Quick Sort", "Merge Sort", "Bubble Sort"};
         double[] tempos = new double[3];
         
         for (int i = 0; i < 3; i++) {
