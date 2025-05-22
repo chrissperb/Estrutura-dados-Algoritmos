@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ex07GerenciadorFilaAtendimento",
+            "request": "launch",
+            "mainClass": "Atividade02.Ex07GerenciadorFilaAtendimento",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
             "name": "Ex06SistemaFilaEspera",
             "request": "launch",
             "mainClass": "Atividade02.Ex06SistemaFilaEspera",
