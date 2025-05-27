@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ex04BinarySearchDataSystem",
+            "request": "launch",
+            "mainClass": "Atividade03.Ex04BinarySearchDataSystem",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
+            "name": "Ex03ContactAgendaSearchSystem",
+            "request": "launch",
+            "mainClass": "Atividade03.Ex03ContactAgendaSearchSystem",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
+            "name": "Ex02EcommerceBSTValidator",
+            "request": "launch",
+            "mainClass": "Atividade03.Ex02EcommerceBSTValidator",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
+            "name": "Ex02EcommerceCategoryManager",
+            "request": "launch",
+            "mainClass": "Atividade03.Ex02EcommerceCategoryManager",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
+            "name": "Ex01BibliotecaManager",
+            "request": "launch",
+            "mainClass": "Atividade03.Ex01BibliotecaManager",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
             "name": "Ex10ClassificadorProdutos",
             "request": "launch",
             "mainClass": "Atividade02.Ex10ClassificadorProdutos",
