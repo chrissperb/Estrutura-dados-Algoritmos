@@ -21,21 +21,25 @@ Atividade02/
     Ex02GerenciadorContatos.java
     Ex03MescladorListasConvidados.java
     Ex04VerificadorExpressoes.java
-    Ex05.java
-    Ex06.java
-    Ex07.java
-    Ex08.java
-    Ex09.java
+    Ex05InversorListaProdutos.java
+    Ex06SistemaFilaEspera.java
+    Ex07GerenciadorFilaAtendimento.java
+    Ex08ContadorPalavras.java
+    Ex09MescladorInventario.java
     Ex10.java
 Atividade03/
-   Arquivos ainda por serem produzidos.
+    Ex01BibliotecaManager.java
+    Ex02EcommerceBSTValidator.java
+    Ex03ContactAgendaSearchSystem.java
+    Ex04BinarySearchDataSystem.java
+    Ex05SistemaRoteamentoGrafos.java
 AtividadeFinal/
-    Arquivo ainda por ser produzido.
+    ProjetoEstruturaDados.java
 ```
 
 - **Atividade01/**: Exercícios introdutórios, cada um abordando um problema prático diferente, como sistemas de reserva, verificação de características, contagem de clientes, listas de espera, cálculo de desempenho de alunos, filas, cadastro de produtos, controle de estoque, sistema de notas e gerenciador de tarefas.
-- **Atividade02/**: Exercícios intermediários, incluindo lista encadeada, pilha, fila e árvore de busca.
-- **Atividade03/**: Exercícios avançados, como uso de HashMap, busca binária e demonstração de QuickSort.
+- **Atividade02/**: Exercícios intermediários, incluindo inversão de listas, gerenciamento de contatos, mesclagem de listas, verificação de expressões, manipulação de filas, contagem de palavras e mesclagem de inventários.
+- **Atividade03/**: Exercícios avançados, como gerenciamento de biblioteca com árvore binária, validação de BST para e-commerce, busca em agenda de contatos, busca binária e roteamento com grafos.
 - **AtividadeFinal/**: Projeto final integrando os principais conceitos da disciplina.
 
 ## Como Executar
