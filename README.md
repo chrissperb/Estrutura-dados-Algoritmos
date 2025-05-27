@@ -26,7 +26,7 @@ Atividade02/
     Ex07GerenciadorFilaAtendimento.java
     Ex08ContadorPalavras.java
     Ex09MescladorInventario.java
-    Ex10.java
+    Ex10ClassificadorProdutos.java
 Atividade03/
     Ex01BibliotecaManager.java
     Ex02EcommerceBSTValidator.java
