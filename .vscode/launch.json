@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ex05SistemaRoteamentoGrafos",
+            "request": "launch",
+            "mainClass": "Atividade03.Ex05SistemaRoteamentoGrafos",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
             "name": "Ex04BinarySearchDataSystem",
             "request": "launch",
             "mainClass": "Atividade03.Ex04BinarySearchDataSystem",
