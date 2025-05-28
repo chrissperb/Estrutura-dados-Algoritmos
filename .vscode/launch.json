@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ex07DFSNavigator",
+            "request": "launch",
+            "mainClass": "Atividade03.Ex07DFSNavigator",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
+            "name": "Ex06BFSNavigator",
+            "request": "launch",
+            "mainClass": "Atividade03.Ex06BFSNavigator",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
             "name": "Ex05SistemaRoteamentoGrafos",
             "request": "launch",
             "mainClass": "Atividade03.Ex05SistemaRoteamentoGrafos",
