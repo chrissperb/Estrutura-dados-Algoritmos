@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ex10TopologicalSorter",
+            "request": "launch",
+            "mainClass": "Atividade03.Ex10TopologicalSorter",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
+            "name": "Ex09ShortestPathFinder",
+            "request": "launch",
+            "mainClass": "Atividade03.Ex09ShortestPathFinder",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
+            "name": "Ex08BSTProductFinder",
+            "request": "launch",
+            "mainClass": "Atividade03.Ex08BSTProductFinder",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
             "name": "Ex07DFSNavigator",
             "request": "launch",
             "mainClass": "Atividade03.Ex07DFSNavigator",

@@ -33,13 +33,18 @@ Atividade03/
     Ex03ContactAgendaSearchSystem.java
     Ex04BinarySearchDataSystem.java
     Ex05SistemaRoteamentoGrafos.java
+    Ex06BFSNavigator.java
+    Ex07DFSNavigator.java
+    Ex08BSTProductFinder.java
+    Ex09ShortestPathFinder.java
+    Ex10TopologicalSorter.java
 AtividadeFinal/
     ProjetoEstruturaDados.java
 ```
 
 - **Atividade01/**: Exercícios introdutórios, cada um abordando um problema prático diferente, como sistemas de reserva, verificação de características, contagem de clientes, listas de espera, cálculo de desempenho de alunos, filas, cadastro de produtos, controle de estoque, sistema de notas e gerenciador de tarefas.
 - **Atividade02/**: Exercícios intermediários, incluindo inversão de listas, gerenciamento de contatos, mesclagem de listas, verificação de expressões, manipulação de filas, contagem de palavras e mesclagem de inventários.
-- **Atividade03/**: Exercícios avançados, como gerenciamento de biblioteca com árvore binária, validação de BST para e-commerce, busca em agenda de contatos, busca binária e roteamento com grafos.
+- **Atividade03/**: Exercícios avançados, como gerenciamento de biblioteca com árvore binária, validação de BST para e-commerce, busca em agenda de contatos, busca binária, roteamento com grafos, navegação BFS/DFS, manipulação de BST, caminhos mínimos e ordenação topológica.
 - **AtividadeFinal/**: Projeto final integrando os principais conceitos da disciplina.
 
 ## Como Executar
@@ -57,7 +62,7 @@ AtividadeFinal/
 
 ## Objetivo
 
-O objetivo deste projeto é exercitar a lógica de programação e os principais conceitos de estrutura de dados, como listas, arrays, pilhas, filas, árvores, manipulação de dados e interação com o usuário via console.
+O objetivo deste projeto é exercitar a lógica de programação e os principais conceitos de estrutura de dados, como listas, arrays, pilhas, filas, árvores, grafos, manipulação de dados e interação com o usuário via console.
 
 ## Autor
 
