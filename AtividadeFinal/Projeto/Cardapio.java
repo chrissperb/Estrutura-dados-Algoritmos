@@ -3,6 +3,7 @@ package Projeto;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class Cardapio {
     private Map<String, Double> cardapio;
 
@@ -25,7 +26,7 @@ public class Cardapio {
     }
 
     public Map<String, Double> getCardapio(){
-        return cardapio;
+        return java.util.Collections.unmodifiableMap(cardapio);
     }
 
     public boolean containsKey(String sabor) {

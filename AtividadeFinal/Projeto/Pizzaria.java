@@ -1,6 +1,8 @@
 package Projeto;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.List;
 import java.util.Scanner;
 import Projeto.Pizza.TamanhoPizza;
@@ -10,6 +12,7 @@ public class Pizzaria {
         Scanner scanner = new Scanner(System.in);
         List<Cliente> listaClientes = new ArrayList<>();
         List<Pedido> listaPedidos = new ArrayList<>();
+        Set<Cliente> setClientes = new HashSet<>();
 
         boolean continuar = true;
         while (continuar) {
@@ -35,8 +38,16 @@ public class Pizzaria {
                     alterarPedido();
                     break;
                 case 3:
-                    listaClientes.add(adicionarCliente(scanner)); 
-                    System.out.println("Cliente adicionado com sucesso!");
+                    Cliente novoCliente = adicionarCliente(scanner);
+                    if (novoCliente == null) {
+                        System.out.println("Cliente inválido. Não foi adicionado.");
+                    } else if (setClientes.contains(novoCliente)) {
+                        System.out.println("Cliente já cadastrado! Não é possível duplicar.");
+                    } else {
+                        listaClientes.add(novoCliente);
+                        setClientes.add(novoCliente);
+                        System.out.println("Cliente adicionado com sucesso!");
+                    }
                     break;
                 case 4:
                     gerarRelatorio();
@@ -58,6 +69,17 @@ public class Pizzaria {
     }
 
     private static void fazerPedido(Scanner scanner, List<Pedido> listaPedidos, List<Cliente> listaClientes) {
+        if (listaClientes.isEmpty()) {
+            System.out.println("Nenhum cliente cadastrado. Por favor, cadastre um cliente antes de fazer um pedido.");
+            Cliente novoCliente = adicionarCliente(scanner);
+        if (novoCliente == null) {
+            System.out.println("Cliente inválido. Pedido não pode ser realizado.");
+            return;
+        }
+        listaClientes.add(novoCliente);
+        System.out.println("Cliente cadastrado com sucesso! Agora você pode fazer o pedido.");
+    }
+        
         List<Pizza> pizzas = new ArrayList<>();
         System.out.println("FAZER PEDIDO");
 
@@ -157,8 +179,12 @@ public class Pizzaria {
         String email = scanner.nextLine();
         System.out.println();
 
-        Cliente cliente = new Cliente(nome, endereco, telefone, email);
-        return cliente;
+        // Validação simples para não permitir cliente nulo ou campos obrigatórios vazios
+        if (nome == null || nome.isBlank() || telefone == null || telefone.isBlank()) {
+            return null;
+        }
+
+        return new Cliente(nome, endereco, telefone, email);
     }
 
     private static void gerarRelatorio() {
