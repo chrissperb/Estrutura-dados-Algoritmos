@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Pizzaria",
+            "request": "launch",
+            "mainClass": "Projeto.Pizzaria",
+            "projectName": "Estrutura-dados-Algoritmos_263848c7"
+        },
+        {
+            "type": "java",
             "name": "Ex10TopologicalSorter",
             "request": "launch",
             "mainClass": "Atividade03.Ex10TopologicalSorter",
