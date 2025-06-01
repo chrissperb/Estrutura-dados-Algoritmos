@@ -1,5 +1,7 @@
 package Projeto;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,9 +17,9 @@ public class CardapioService {
         return cardapio;
     }
 
-    public double getPrecoJusto(List<String> sabores){
+    public BigDecimal getPrecoJusto(List<String> sabores){
         List<String> saboresEncontrados = new ArrayList<>();
-        double precoTotal = 0.0;
+        BigDecimal precoTotal = BigDecimal.ZERO;
         int totalSabores = 0;
         for (String sabor : sabores) {
             if (cardapio.containsKey(sabor)) {
@@ -26,10 +28,11 @@ public class CardapioService {
             }else{
                 System.out.println("Pizza "+sabor+" não encontrado!");
             }
-        }
-
-        for (String sabor : saboresEncontrados) {
-            precoTotal += cardapio.get(sabor)/totalSabores;
+        
+            precoTotal = precoTotal.add(
+                BigDecimal.valueOf(cardapio.get(sabor))
+                    .divide(BigDecimal.valueOf(totalSabores), RoundingMode.HALF_UP)
+            );
         }
 
         return precoTotal;

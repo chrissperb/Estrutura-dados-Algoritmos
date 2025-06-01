@@ -1,5 +1,6 @@
 package Projeto;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -151,10 +152,10 @@ public class Pizzaria {
         listaPedidos.add(pedido);
     }
 
-    private static double somarPizzas(List<Pizza> pizzas) {
-        double valorTotal = 0;
+    private static BigDecimal somarPizzas(List<Pizza> pizzas) {
+        BigDecimal valorTotal = BigDecimal.ZERO;
         for (Pizza pizza : pizzas) {
-            valorTotal += pizza.getPreco();
+            valorTotal = valorTotal.add(pizza.getPreco());
         }
         return valorTotal;
     }

@@ -1,10 +1,11 @@
 package Projeto;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class Pizza {
     private List<String> sabores;
-    private double preco;
+    private BigDecimal preco;
     private TamanhoPizza tamanho;
 
     public enum TamanhoPizza{
@@ -22,7 +23,7 @@ public class Pizza {
         }
     }
 
-    public Pizza(List<String> sabores, double preco, TamanhoPizza tamanho){
+    public Pizza(List<String> sabores, BigDecimal preco, TamanhoPizza tamanho){
         this.sabores = sabores;
         this.preco = preco;
         this.tamanho = tamanho;
@@ -32,7 +33,7 @@ public class Pizza {
         return sabores;
     }
 
-    public double getPreco(){
+    public BigDecimal getPreco(){
         return preco;
     }
 
@@ -44,7 +45,7 @@ public class Pizza {
         this.sabores = sabores;
     }
 
-    public void setPreco(double preco){
+    public void setPreco(BigDecimal preco){
         this.preco = preco;
     }
 
@@ -52,4 +53,13 @@ public class Pizza {
         this.tamanho = tamanho;
     }
     
+    @Override
+    public String toString() {
+        return "Pizza{" +
+                "sabores=" + sabores +
+                ", preco=" + preco +
+                ", tamanho=" + tamanho +
+                '}';
+    }
+
 }
