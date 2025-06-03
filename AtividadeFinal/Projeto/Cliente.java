@@ -1,7 +1,7 @@
 package Projeto;
 
 public class Cliente {
-    private final String nome;
+    private String nome;
     private final String endereco;
     private final String telefone;
     private final String email;
