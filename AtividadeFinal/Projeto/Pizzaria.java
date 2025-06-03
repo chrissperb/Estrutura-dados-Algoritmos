@@ -221,7 +221,7 @@ public class Pizzaria {
                     alterarSaboresPizza(scanner, pedidoSelecionado);
                     break;
                 case 4:
-                    editando = false;
+                    gerarRelatorio(listaPedidos);
                     break;
             }
 
@@ -352,8 +352,82 @@ public class Pizzaria {
         return new Cliente(nome, endereco, telefone, email);
     }
 
-    private static void gerarRelatorio() {
-        System.out.println("Gerar relatorio");
+    private static void gerarRelatorio(List<Pedido> listaPedidos) {
+        if (listaPedidos.isEmpty()) {
+            System.out.println("Não há pedidos para gerar relatório.");
+            return;
+        }
+
+        Map<String, Integer> saborCount = new HashMap<>();
+        Map<String, Map<String, Integer>> saborConnections = new HashMap<>();
+        BigDecimal faturamentoTotal = BigDecimal.ZERO;
+        int totalPizzas = 0;
+
+        for (Pedido pedido : listaPedidos) {
+            faturamentoTotal = faturamentoTotal.add(pedido.getValorTotal());
+
+            for (Pizza pizza : pedido.getPizzas()) {
+                totalPizzas++;
+                List<String> sabores = pizza.getSabores();
+
+                for (String sabor : sabores) {
+                    saborCount.merge(sabor, 1, Integer::sum);
+                }
+
+                for (String sabor1 : sabores) {
+                    for (String sabor2 : sabores) {
+                        if (!sabor1.equals(sabor2)) {
+                            saborConnections.putIfAbsent(sabor1, new HashMap<>());
+                            saborConnections.get(sabor1).merge(sabor2, 1, Integer::sum);
+                        }
+                    }
+                }
+            }
+        }
+
+        System.out.println("\n=== RELATÓRIO DE VENDAS ===\n");
+
+        System.out.printf("Faturamento Total: R$ %.2f%n", faturamentoTotal);
+        System.out.println("Total de Pizzas Vendidas: " + totalPizzas);
+        System.out.println("Total de Pedidos: " + listaPedidos.size());
+        System.out.printf("Ticket Médio: R$ %.2f%n",
+                faturamentoTotal.divide(BigDecimal.valueOf(listaPedidos.size()), 2, RoundingMode.HALF_UP));
+
+        System.out.println("\nTop 5 Sabores Mais Pedidos:");
+        saborCount.entrySet().stream()
+                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+                .limit(5)
+                .forEach(entry -> System.out.printf("- %s: %d pedidos%n",
+                        entry.getKey(), entry.getValue()));
+
+        System.out.println("\nCombinações Mais Frequentes:");
+        List<SaborConnection> connections = new ArrayList<>();
+
+        saborConnections.forEach((sabor1, connections1) -> {
+            connections1.forEach((sabor2, count) -> {
+                if (sabor1.compareTo(sabor2) < 0) { // Evitar duplicatas
+                    connections.add(new SaborConnection(sabor1, sabor2, count));
+                }
+            });
+        });
+
+        connections.stream()
+                .sorted((c1, c2) -> c2.count - c1.count)
+                .limit(5)
+                .forEach(c -> System.out.printf("- %s + %s: %d vezes%n",
+                        c.sabor1, c.sabor2, c.count));
+    }
+
+    private static class SaborConnection {
+        String sabor1;
+        String sabor2;
+        int count;
+
+        SaborConnection(String sabor1, String sabor2, int count) {
+            this.sabor1 = sabor1;
+            this.sabor2 = sabor2;
+            this.count = count;
+        }
     }
 
     private static void gerarListaClientes(List<Cliente> listaClientes) {
