@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public class Pedido {
-    private int id;
+    private final int id;
     private Cliente cliente;
     private List<Pizza> pizzas;
     private BigDecimal valorTotal;

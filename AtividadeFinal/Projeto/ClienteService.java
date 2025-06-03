@@ -2,7 +2,7 @@ package Projeto;
 
 public class ClienteService {
 
-    private Cliente cliente;
+    private final Cliente cliente;
 
     public ClienteService(String nome, String endereco, String telefone, String email) {
         this.cliente = new Cliente(nome, endereco, telefone, email);
