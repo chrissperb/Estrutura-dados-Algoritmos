@@ -32,6 +32,10 @@ public class Pedido {
         this.valorTotal = valorTotal;
     }
 
+    public BigDecimal getValorTotal() {
+        return valorTotal;
+    }
+
     @Override
     public String toString() {
         return "Pedido #" + id + " - Cliente: " + cliente.getNome() +

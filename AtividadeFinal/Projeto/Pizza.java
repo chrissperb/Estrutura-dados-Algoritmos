@@ -21,8 +21,8 @@ public class Pizza {
                 throw new IllegalArgumentException("Posição incorreta do index");
             }
         }
-    }
 
+    }
     public Pizza(List<String> sabores, BigDecimal preco, TamanhoPizza tamanho) {
         this.sabores = sabores;
         this.preco = preco;
@@ -35,6 +35,10 @@ public class Pizza {
 
     public void setSabores(List<String> sabores) {
         this.sabores = sabores;
+    }
+
+    public List<String> getSabores() {
+        return sabores;
     }
 
     public void setPreco(BigDecimal preco) {
