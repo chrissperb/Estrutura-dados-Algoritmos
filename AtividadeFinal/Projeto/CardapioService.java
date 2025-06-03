@@ -18,9 +18,9 @@ public class CardapioService {
     }
 
     public BigDecimal getPrecoJusto(List<String> sabores) {
-        List<String> saboresEncontrados = new ArrayList<>();
         BigDecimal precoTotal = BigDecimal.ZERO;
         int totalSabores = 0;
+        List<String> saboresEncontrados = new ArrayList<>();
         for (String sabor : sabores) {
             if (cardapio.containsKey(sabor)) {
                 saboresEncontrados.add(sabor);
