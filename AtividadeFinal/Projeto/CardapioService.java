@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CardapioService {
 
-    private Cardapio cardapio;
+    private final Cardapio cardapio;
 
     public CardapioService() {
         this.cardapio = new Cardapio();

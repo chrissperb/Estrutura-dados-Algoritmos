@@ -29,16 +29,8 @@ public class Pizza {
         this.tamanho = tamanho;
     }
 
-    public List<String> getSabores() {
-        return sabores;
-    }
-
     public BigDecimal getPreco() {
         return preco;
-    }
-
-    public TamanhoPizza getTamanho() {
-        return tamanho;
     }
 
     public void setSabores(List<String> sabores) {
@@ -47,10 +39,6 @@ public class Pizza {
 
     public void setPreco(BigDecimal preco) {
         this.preco = preco;
-    }
-
-    public void setTamanho(TamanhoPizza tamanho) {
-        this.tamanho = tamanho;
     }
 
     @Override

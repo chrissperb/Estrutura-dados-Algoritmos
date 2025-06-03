@@ -5,7 +5,7 @@ import java.util.Map;
 
 
 public class Cardapio {
-    private Map<String, Double> cardapio;
+    private final Map<String, Double> cardapio;
 
     public Cardapio() {
         this.cardapio = new HashMap<>();

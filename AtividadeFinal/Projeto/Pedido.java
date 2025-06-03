@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Pedido {
     private final int id;
-    private Cliente cliente;
-    private List<Pizza> pizzas;
+    private final Cliente cliente;
+    private final List<Pizza> pizzas;
     private BigDecimal valorTotal;
 
     public Pedido(int id, Cliente cliente, List<Pizza> pizzas, BigDecimal valorTotal) {
