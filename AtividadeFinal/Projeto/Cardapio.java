@@ -25,7 +25,7 @@ public class Cardapio {
         cardapio.put("Especial da casa", 42.20);
     }
 
-    public Map<String, Double> getCardapio(){
+    public Map<String, Double> getCardapio() {
         return java.util.Collections.unmodifiableMap(cardapio);
     }
 

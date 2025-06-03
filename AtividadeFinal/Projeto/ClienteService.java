@@ -1,7 +1,7 @@
 package Projeto;
 
 public class ClienteService {
-            
+
     private Cliente cliente;
 
     public ClienteService(String nome, String endereco, String telefone, String email) {

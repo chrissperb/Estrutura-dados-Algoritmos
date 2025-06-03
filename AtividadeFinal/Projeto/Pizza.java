@@ -8,51 +8,51 @@ public class Pizza {
     private BigDecimal preco;
     private TamanhoPizza tamanho;
 
-    public enum TamanhoPizza{
+    public enum TamanhoPizza {
         BROTO,
         GRANDE,
         GIGA;
 
-        public static TamanhoPizza getByIndex(int index){
+        public static TamanhoPizza getByIndex(int index) {
             TamanhoPizza[] tamanhos = TamanhoPizza.values();
             if (index >= 0 && index < tamanhos.length) {
                 return tamanhos[index];
-            }else{
+            } else {
                 throw new IllegalArgumentException("Posição incorreta do index");
             }
         }
     }
 
-    public Pizza(List<String> sabores, BigDecimal preco, TamanhoPizza tamanho){
+    public Pizza(List<String> sabores, BigDecimal preco, TamanhoPizza tamanho) {
         this.sabores = sabores;
         this.preco = preco;
         this.tamanho = tamanho;
     }
 
-    public List<String> getSabores(){
+    public List<String> getSabores() {
         return sabores;
     }
 
-    public BigDecimal getPreco(){
+    public BigDecimal getPreco() {
         return preco;
     }
 
-    public TamanhoPizza getTamanho(){
+    public TamanhoPizza getTamanho() {
         return tamanho;
     }
 
-    public void setSabores(List<String> sabores){
+    public void setSabores(List<String> sabores) {
         this.sabores = sabores;
     }
 
-    public void setPreco(BigDecimal preco){
+    public void setPreco(BigDecimal preco) {
         this.preco = preco;
     }
 
-    public void setTamanho(TamanhoPizza tamanho){
+    public void setTamanho(TamanhoPizza tamanho) {
         this.tamanho = tamanho;
     }
-    
+
     @Override
     public String toString() {
         return "Pizza{" +
