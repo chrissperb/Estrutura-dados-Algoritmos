@@ -48,7 +48,7 @@ public class Pizzaria {
                     }
                     break;
                 case 4:
-                    gerarRelatorio();
+                    gerarRelatorio(listaPedidos);
                     break;
                 case 5:
                     gerarListaClientes(listaClientes);
@@ -221,7 +221,7 @@ public class Pizzaria {
                     alterarSaboresPizza(scanner, pedidoSelecionado);
                     break;
                 case 4:
-                    gerarRelatorio(listaPedidos);
+                    editando = false;
                     break;
             }
 
