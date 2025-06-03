@@ -1,10 +1,10 @@
 package Projeto;
 
 public class Cliente {
-    private String nome;
-    private String endereco;
-    private String telefone;
-    private String email;
+    private final String nome;
+    private final String endereco;
+    private final String telefone;
+    private final String email;
 
     public Cliente(String nome, String endereco, String telefone, String email) {
         this.nome = nome;

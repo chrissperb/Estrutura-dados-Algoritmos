@@ -6,7 +6,7 @@ import java.util.List;
 public class Pizza {
     private List<String> sabores;
     private BigDecimal preco;
-    private TamanhoPizza tamanho;
+    private final TamanhoPizza tamanho;
 
     public enum TamanhoPizza {
         BROTO,
