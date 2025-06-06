@@ -47,6 +47,30 @@ AtividadeFinal/
 - **Atividade03/**: Exercícios avançados, como gerenciamento de biblioteca com árvore binária, validação de BST para e-commerce, busca em agenda de contatos, busca binária, roteamento com grafos, navegação BFS/DFS, manipulação de BST, caminhos mínimos e ordenação topológica.
 - **AtividadeFinal/**: Projeto final integrando os principais conceitos da disciplina.
 
+## Projeto Final: Sistema de Pizzaria
+
+O projeto final consiste em um sistema de gerenciamento de pedidos para uma pizzaria, implementando estruturas de dados e algoritmos estudados durante o curso.
+
+### Funcionalidades Principais
+
+- Gerenciamento de pedidos de pizza
+- Cadastro e gestão de clientes
+- Cardápio dinâmico com diversos sabores
+- Sistema de cálculo de preços
+- Edição de pedidos existentes
+- Relatórios de vendas com análise de dados
+- Sistema de entrega com cálculo de frete
+- Análise de combinações de sabores usando grafos
+
+### Estruturas de Dados Utilizadas
+
+- **Lists**: Armazenamento de pedidos, pizzas e clientes
+- **Sets**: Controle de clientes únicos
+- **Maps**: Gestão do cardápio e contagem de sabores
+- **Graphs**: Análise de relações entre sabores de pizza
+- **Streams**: Processamento de dados e relatórios
+
+
 ## Como Executar
 
 1. Certifique-se de ter o [Java JDK](https://adoptium.net/) instalado (versão 8 ou superior).
