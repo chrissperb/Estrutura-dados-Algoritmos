@@ -4,6 +4,7 @@ import Projeto.Pizza.TamanhoPizza;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalDateTime;
 import java.util.*;
 
 public class Pizzaria {
@@ -22,6 +23,7 @@ public class Pizzaria {
             System.out.println("3 - Adicionar um cliente");
             System.out.println("4 - Gerar relatório de vendas");
             System.out.println("5 - Gerar lista de clientes");
+            System.out.println("6 - Calcular entrega");
             System.out.println("9 - Sair");
 
             System.out.print("Opção: ");
@@ -53,6 +55,9 @@ public class Pizzaria {
                     break;
                 case 5:
                     gerarListaClientes(listaClientes);
+                    break;
+                case 6:
+                    calcularEntrega(scanner, listaPedidos);
                     break;
                 case 9:
                     System.out.println("Obrigado por utilizar nosso sistema!");
@@ -445,6 +450,42 @@ public class Pizzaria {
                 System.out.println();
                 x++;
             }
+        }
+    }
+
+    private static void calcularEntrega(Scanner scanner, List<Pedido> listaPedidos) {
+        if (listaPedidos.isEmpty()) {
+            System.out.println("Não há pedidos para calcular entrega.");
+            return;
+        }
+
+        System.out.println("CALCULAR ENTREGA");
+        System.out.print("Digite o ID do pedido: ");
+        int idPedido = scanner.nextInt();
+        scanner.nextLine();
+
+        Pedido pedido = listaPedidos.stream()
+                .filter(p -> p.getId() == idPedido)
+                .findFirst()
+                .orElse(null);
+
+        if (pedido == null) {
+            System.out.println("Pedido não encontrado!");
+            return;
+        }
+
+        System.out.print("Digite a distância em km: ");
+        double distancia = scanner.nextDouble();
+        scanner.nextLine();
+
+        int hora = LocalDateTime.now().getHour();
+        System.out.println("Hora atual: " + hora + "h");
+
+        try {
+            FreteCalculator.FreteInfo freteInfo = FreteCalculator.calcularFrete(pedido, distancia, hora);
+            System.out.println(freteInfo);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro: " + e.getMessage());
         }
     }
 }
